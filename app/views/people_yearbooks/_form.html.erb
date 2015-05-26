@@ -1,0 +1,36 @@
+<%= form_for(@people_yearbook) do |f| %>
+  <% if @people_yearbook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@people_yearbook.errors.count, "error") %> prohibited this people_yearbook from being saved:</h2>
+
+      <ul>
+      <% @people_yearbook.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class="field">
+	    <%= f.label :person_name %><br>
+	    <%= f.text_field :person_id %>
+	</div>
+	<div class="field">
+	    <%= f.label :pdate %><br>
+	    <%= f.date_select :pdate %>
+	</div>
+	<div class="field">
+	    <%= f.label :place %><br>
+	    <%= f.text_field :place %>
+	</div>
+	<div class="field">
+	    <%= f.label :event_description %><br>
+	    <%= f.text_area :event_description %>
+	</div>
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

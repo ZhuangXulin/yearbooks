@@ -1,0 +1,100 @@
+
+<body>
+	<div id="wrapper">
+		<div id="content">
+			<div class="c1">
+				<div class="controls">
+					<nav class="links">
+						<ul>
+							<li><a href="/people#index" class="ico1">People </a></li>
+							<li><a href="#" class="ico2">People Yearbooks </a></li>
+						</ul>
+					</nav>
+					<div class="profile-box">
+						<span class="profile">
+							<a href="#" class="section">
+								<img class="image" src="/images/img1.png" alt="image description" width="26" height="26" />
+								<span class="text-box">
+									Welcome
+									<strong class="name">Xulin Zhuang</strong>
+								</span>
+							</a>
+							<a href="#" class="opener">opener</a>
+						</span>
+						<a href="#" class="btn-on">On</a>
+					</div>
+				</div>
+				<div class="tabs">
+					<div id="tab-1">
+						<article>
+							<ul class="states">
+								<p>
+								  <strong>Name:</strong>
+								  <%= @person.name %>
+								</p>
+
+								<p>
+								  <strong>Bio:</strong>
+								  <%= @person.bio %>
+								</p>
+								<p>
+								  <strong>Nationality:</strong>
+								  <%= @person.nationality %>
+								</p>
+								<p>
+								  <strong>Birthplace:</strong>
+								  <%= @person.birthplace %>
+								</p>
+								<p>
+								  <strong>Date of Birth:</strong>
+								  <%= @person.date_of_birth %>
+								</p>
+								<p>
+								  <strong>Date of Death:</strong>
+								  <%= @person.date_of_death %>
+								</p>
+								<p>
+								  <strong>Occupation:</strong>
+								  <%= @person.occupation %>
+								</p>
+								<p>
+								  <strong>Wikipedia URL:</strong>
+								  <%= @person.wikipedia_url %>
+								</p>
+								<p>
+								  <strong>Baike URL:</strong>
+								  <%= @person.baike_url %>
+								</p>
+								<%= link_to 'Edit', edit_person_path(@person) %> |
+								<%= link_to 'Back', people_path %> | 
+								<%= link_to 'Show yearbooks', people_yearbook_path%>
+								
+							</ul>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+

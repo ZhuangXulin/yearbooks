@@ -1,0 +1,75 @@
+<body>
+	<div id="wrapper">
+		<div id="content">
+			<div class="c1">
+				<div class="controls">
+					<nav class="links">
+						<ul>
+							<li><a href="people#index" class="ico1">People </a></li>
+							<li><a href="people_yearbooks#index" class="ico2">People Yearbooks </a></li>
+						</ul>
+					</nav>
+					<div class="profile-box">
+						<span class="profile">
+							<a href="#" class="section">
+								<img class="image" src="/images/img1.png" alt="image description" width="26" height="26" />
+								<span class="text-box">
+									Welcome
+									<strong class="name">Xulin Zhuang</strong>
+								</span>
+							</a>
+							<a href="#" class="opener">opener</a>
+						</span>
+						<a href="#" class="btn-on">On</a>
+					</div>
+				</div>
+				<div class="tabs">
+					<div id="tab-1" class="tab">
+						<article>
+							<div class="text-section">
+								<h1><p id="notice"><%= notice %></p></h1>
+							</div>
+							<ul class="states" >
+								<h1>Listing People</h1>
+
+								<table>
+								  <thead>
+								    <tr>
+								      <th>Name</th>
+								      <th colspan="3"></th>
+								    </tr>
+								  </thead>
+
+								  <tbody>
+								    <% @people.each do |person| %>
+								      <tr>
+								        <td><%= person.name %></td>
+								        <td><%= link_to 'Show', person %></td>
+								        <td><%= link_to 'Edit', edit_person_path(person) %></td>
+								        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+								      </tr>
+								    <% end %>
+								  </tbody>
+								</table>
+
+								<br>
+
+								<%= link_to 'New Person', new_person_path %>
+								
+							</ul>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+</body>
+
+
+
+
+
+
+

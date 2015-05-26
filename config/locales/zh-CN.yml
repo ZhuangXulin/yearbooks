@@ -1,0 +1,61 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+zh-CN:
+  main:
+      error: '错误'
+      false: '失败'
+      success: '成功'
+  users:
+      username: '姓名'
+      password: '密码'
+  will_paginate:
+      page_entries_info:
+          multi_page_html: ''
+          single_page_html: ''
+      previous_label: '上一页'
+      next_label: '下一页'
+  devise:
+    confirmations:
+      confirmed: '你的邮箱地址认证成功。'
+      send_instructions: '请查询你的邮箱，按照邮件的提示激活您的账户。'
+      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+    failure:
+      already_authenticated: '你已经登录。'
+      inactive: '你的账户还没有激活。'
+      invalid: "Invalid %{authentication_keys} or password."
+      locked: '你的账户已经被锁定。'
+      last_attempt: "You have one more attempt before your account is locked."
+      not_found_in_database: "Invalid %{authentication_keys} or password."
+      timeout: "Your session expired. Please sign in again to continue."
+      unauthenticated: '你需要登录后才能够继续操作。'
+      unconfirmed: "You have to confirm your email address before continuing."
+    mailer:
+      confirmation_instructions:
+        subject: '激活您的ghobbies账户'
+      reset_password_instructions:
+        subject: '重置您的ghobbies账户密码'
+      unlock_instructions:
+        subject: '解除您的ghobbies账户锁定'
+    sessions:
+      signed_in: ""
+      signed_out: ""
+      already_signed_out: ""

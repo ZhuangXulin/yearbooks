@@ -1,0 +1,2 @@
+module PeopleYearbooksHelper
+end
