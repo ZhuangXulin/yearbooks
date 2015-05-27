@@ -1,4 +1,71 @@
-<p id="notice"><%= notice %></p>
+<body>
+	<div id="wrapper">
+		<div id="content">
+			<div class="c1">
+				<div class="controls">
+					<nav class="links">
+						<ul>
+							<li><a href="/people#index" class="ico1">People </a></li>
+							<li><a href="/people_yearbooks#index" class="ico2">People Yearbooks </a></li>
+						</ul>
+					</nav>
+					<div class="profile-box">
+						<span class="profile">
+							<a href="#" class="section">
+								<img class="image" src="/images/img1.png" alt="image description" width="26" height="26" />
+								<span class="text-box">
+									Welcome
+									<strong class="name">Xulin Zhuang</strong>
+								</span>
+							</a>
+							<a href="#" class="opener">opener</a>
+						</span>
+						 <%= link_to('Logout', destroy_user_session_path, :method => :delete,class: 'btn-on') %>  
+					</div>
+				</div>
+				<div class="tabs">
+					<div id="tab-1">
+						<article>
+							<div class="text-section">
+								<h1><p id="notice"><%= notice %></p></h1>
+							</div>
+							<ul class="states">
+								<h1>People Yearbook Infomation</h1>
+								<p>
+								  <strong>Person Name:</strong>
+								  <%= @people_yearbook.person_id %>
+								</p>
 
-<%= link_to 'Edit', edit_people_yearbook_path(@people_yearbook) %> |
-<%= link_to 'Back', people_yearbooks_path %>
+								<p>
+								  <strong>Yearbook Date:</strong>
+								  <%= @people_yearbook.pdate %>
+								</p>
+								<p>
+								  <strong>Event Place:</strong>
+								  <%= @people_yearbook.place %>
+								</p>
+								<p>
+								  <strong>Event Description:</strong>
+								  <%= @people_yearbook.event_description %>
+								</p>
+								<p>
+								  <strong>This Event Create At:</strong>
+								  <%= @people_yearbook.created_at %>
+								</p>
+								<p>
+								  <strong>This Event Update At:</strong>
+								  <%= @people_yearbook.updated_at %>
+								</p>
+								<%= link_to 'Edit', edit_people_yearbook_path(@people_yearbook) %> |
+								<%= link_to 'Back', people_yearbooks_path %>
+								
+							</ul>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+</body>

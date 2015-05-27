@@ -27,7 +27,11 @@
 				<div class="tabs">
 					<div id="tab-1">
 						<article>
+							<div class="text-section">
+								<h1><p id="notice"><%= notice %></p></h1>
+							</div>
 							<ul class="states">
+								<h1>People Infomation</h1>
 								<p>
 								  <strong>Name:</strong>
 								  <%= @person.name %>
@@ -65,6 +69,14 @@
 								  <strong>Baike URL:</strong>
 								  <%= @person.baike_url %>
 								</p>
+								<p>
+								  <strong>This Event Create At:</strong>
+								  <%= @person.created_at %>
+								</p>
+								<p>
+								  <strong>This Event Update At:</strong>
+								  <%= @person.updated_at %>
+								</p>
 								<%= link_to 'Edit', edit_person_path(@person) %> |
 								<%= link_to 'Back', people_path %> | 
 								<%= link_to 'Show yearbooks', people_yearbook_path%>
@@ -79,22 +91,3 @@
 		
 	</div>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p id="notice"><%= notice %></p>
-
-

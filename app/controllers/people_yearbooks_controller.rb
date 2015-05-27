@@ -79,6 +79,6 @@ class PeopleYearbooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def people_yearbook_params
-      params[:people_yearbook]
+      params.require(:people_yearbook).permit(:person_id, :pdate, :place, :event_description)
     end
 end

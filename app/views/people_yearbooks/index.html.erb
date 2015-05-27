@@ -35,6 +35,7 @@
 								<table>
 								  <thead>
 								    <tr>
+									  <th>Person ID</th>
 								      <th colspan="3"></th>
 								    </tr>
 								  </thead>
@@ -42,6 +43,8 @@
 								  <tbody>
 								    <% @people_yearbooks.each do |people_yearbook| %>
 								      <tr>
+										 <td><%= people_yearbook.person_id %></td>
+										 <td><%= people_yearbook.event_description %></td>
 								        <td><%= link_to 'Show', people_yearbook %></td>
 								        <td><%= link_to 'Edit', edit_people_yearbook_path(people_yearbook) %></td>
 								        <td><%= link_to 'Destroy', people_yearbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -64,18 +67,3 @@
 		
 	</div>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
