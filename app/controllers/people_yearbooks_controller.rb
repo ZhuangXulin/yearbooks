@@ -1,4 +1,5 @@
 class PeopleYearbooksController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_people_yearbook, only: [:show, :edit, :update, :destroy]
 
   # GET /people_yearbooks

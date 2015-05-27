@@ -6,7 +6,7 @@
 					<nav class="links">
 						<ul>
 							<li><a href="/people#index" class="ico1">People </a></li>
-							<li><a href="#" class="ico2">People Yearbooks </a></li>
+							<li><a href="/people_yearbooks#index" class="ico2">People Yearbooks </a></li>
 						</ul>
 					</nav>
 					<div class="profile-box">
@@ -20,7 +20,7 @@
 							</a>
 							<a href="#" class="opener">opener</a>
 						</span>
-						<a href="#" class="btn-on">On</a>
+						 <%= link_to('Logout', destroy_user_session_path, :method => :delete,class: 'btn-on') %>  
 					</div>
 				</div>
 				<div class="tabs">

@@ -8,16 +8,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    @user = User.new(user_params)
-    respond_to do |format|
-      if @user.save
-        format.json { render json: { success: true, token:@user.authentication_token, user_id:@user.id }}
-      else
-        format.json { render json: { success: false,token:nil,user_id:nil }}
-      end
-    end
-  end
+  #def create
+  #  @user = User.new(user_params)
+  #  respond_to do |format|
+  #    if @user.save
+  #      format.json { render json: { success: true, token:@user.authentication_token, user_id:@user.id }}
+  #    else
+  #      format.json { render json: { success: false,token:nil,user_id:nil }}
+  #    end
+  #  end
+  #end
 
   # GET /resource/edit
   # def edit
@@ -65,8 +65,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   
-  private
-  def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
-  end
+  #private
+  #def user_params
+  #  params.require(:user).permit(:email, :password, :password_confirmation)
+  #end
 end
