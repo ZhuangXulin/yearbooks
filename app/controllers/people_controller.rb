@@ -5,7 +5,10 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.all
+    @people = Person.index(params[:page],params[:search_key])
+  end
+
+  def search
   end
 
   # GET /people/1
@@ -26,7 +29,6 @@ class PeopleController < ApplicationController
   # POST /people.json
   def create
     @person = Person.new(person_params)
-
     respond_to do |format|
       if @person.save
         format.html { redirect_to @person, notice: 'Person was successfully created.' }
@@ -70,6 +72,10 @@ class PeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      params.require(:person).permit(:name, :bio, :nationality, :birthplace, :date_of_birth, :date_of_death, :occupation, :wikipedia_url, :baike_url)
+      if params[:person][:isdeath] == "yes"
+        params.require(:person).permit(:name, :bio, :nationality, :birthplace, :date_of_birth, :date_of_death, :occupation, :wikipedia_url, :baike_url)
+      else
+        params.require(:person).permit(:name, :bio, :nationality, :birthplace, :date_of_birth, :occupation, :wikipedia_url, :baike_url)
+      end
     end
 end

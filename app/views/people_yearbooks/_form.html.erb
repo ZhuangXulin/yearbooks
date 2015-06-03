@@ -28,7 +28,10 @@
 	    <%= f.text_area :event_description %>
 	</div>
 
-
+	<div class="field">
+   	 	<%= f.file_field :avatar %>
+   	  	<%= f.hidden_field :avatar_cache %>
+  	</div>
 
   <div class="actions">
     <%= f.submit %>

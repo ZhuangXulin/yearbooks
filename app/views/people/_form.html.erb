@@ -33,6 +33,7 @@
     <%= f.date_select :date_of_birth, :use_month_numbers => true %>
   </div>
   <div class="field">
+	<%= f.check_box :isdeath,{:checked=>true}, "yes", "no" %>
     <%= f.label :date_of_death %><br>
     <%= f.date_select :date_of_death, :use_month_numbers => true %>
   </div>
