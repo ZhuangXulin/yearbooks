@@ -34,7 +34,7 @@ class PeopleYearbooksController < ApplicationController
         format.json { render json: @people_yearbook.errors, status: :unprocessable_entity }
       else
         @people_yearbook.person_id = person[0].id
-        @people_yearbook.pdate  = people_yearbook_params[:pdate][:1i]
+        @people_yearbook.pdate  = people_yearbook_params[:pdate]
         @people_yearbook.place = people_yearbook_params[:place]
         @people_yearbook.event_description = people_yearbook_params[:event_description]
         if @people_yearbook.save
