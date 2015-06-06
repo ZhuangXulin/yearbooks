@@ -5,7 +5,8 @@ class PeopleYearbooksController < ApplicationController
   # GET /people_yearbooks
   # GET /people_yearbooks.json
   def index
-    @people_yearbooks = PeopleYearbook.all
+    @people_yearbooks = PeopleYearbook.index(params[:page],params[:person_name])
+    @person_name = params[:person_name]
   end
 
   # GET /people_yearbooks/1
@@ -26,16 +27,16 @@ class PeopleYearbooksController < ApplicationController
   # POST /people_yearbooks.json
   def create 
     @people_yearbook = PeopleYearbook.new
-    person = Person.where(:name => people_yearbook_params[:person_id] )
+    person = Person.where(:name => params[:person_name] )
     respond_to do |format|
       if person[0] == nil
         format.html { render :new }
         format.json { render json: @people_yearbook.errors, status: :unprocessable_entity }
       else
         @people_yearbook.person_id = person[0].id
-        @people_yearbook.pdate = people_yearbook_params[:pdate]
+        @people_yearbook.pdate  = people_yearbook_params[:pdate][:1i]
         @people_yearbook.place = people_yearbook_params[:place]
-        @people_yearbook.event_description = people_yearbook_param[:event_description]
+        @people_yearbook.event_description = people_yearbook_params[:event_description]
         if @people_yearbook.save
           format.html { redirect_to @people_yearbook, notice: 'People yearbook was successfully created.' }
           format.json { render :show, status: :created, location: @people_yearbook }

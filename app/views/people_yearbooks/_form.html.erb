@@ -12,20 +12,20 @@
   <% end %>
 
 	<div class="field">
-	    <%= f.label :person_name %><br>
-	    <%= f.text_field :person_id %>
+	    Person Name<br>
+		<input type="text" name="person_name" value="" size="30" /> 
 	</div>
 	<div class="field">
 	    <%= f.label :pdate %><br>
-	    <%= f.date_select :pdate %>
+	    <%= f.date_select :pdate, :use_month_numbers => true %>
 	</div>
 	<div class="field">
 	    <%= f.label :place %><br>
-	    <%= f.text_field :place %>
+	    <%= f.text_field :place, size: 30 %>
 	</div>
 	<div class="field">
 	    <%= f.label :event_description %><br>
-	    <%= f.text_area :event_description %>
+	    <%= f.text_area :event_description, rows: 8, cols: 30 %>
 	</div>
 
 	<div class="field">

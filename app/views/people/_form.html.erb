@@ -13,41 +13,41 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, size: 30 %>
   </div>
   <div class="field">
     <%= f.label :bio %><br>
-    <%= f.text_area :bio %>
+    <%= f.text_area :bio , size: 30, rows: 8, cols: 30 %>
   </div>
   
   <div class="field">
     <%= f.label :nationality %><br>
-    <%= f.text_field :nationality %>
+    <%= f.text_field :nationality, size: 30 %>
   </div>
   <div class="field">
     <%= f.label :birthplace %><br>
-    <%= f.text_field :birthplace %>
+    <%= f.text_field :birthplace, size: 30 %>
   </div>
   <div class="field">
     <%= f.label :date_of_birth %><br>
-    <%= f.date_select :date_of_birth, :use_month_numbers => true %>
+    <%= f.date_select :date_of_birth, :use_month_numbers => true, start_year: 1900 %>
   </div>
   <div class="field">
-	<%= f.check_box :isdeath,{:checked=>true}, "yes", "no" %>
+	<%= f.check_box :isdeath,{:checked=>true}, "yes", "no" %>Yes,Person is Death</br>
     <%= f.label :date_of_death %><br>
-    <%= f.date_select :date_of_death, :use_month_numbers => true %>
+    <%= f.date_select :date_of_death, :use_month_numbers => true, start_year: 1900 %>
   </div>
   <div class="field">
     <%= f.label :occupation %><br>
-    <%= f.text_field :occupation %>
+    <%= f.text_field :occupation, size: 30 %>
   </div>
   <div class="field">
     <%= f.label :wikipedia_url %><br>
-    <%= f.text_field :wikipedia_url %>
+    <%= f.text_field :wikipedia_url, size: 30 %>
   </div>
   <div class="field">
     <%= f.label :baike_url %><br>
-    <%= f.text_field :baike_url %>
+    <%= f.text_field :baike_url, size: 30 %>
   </div>
   
   <div class="actions">
