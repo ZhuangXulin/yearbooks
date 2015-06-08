@@ -16,8 +16,15 @@
 		<input type="text" name="person_name" value="" size="30" /> 
 	</div>
 	<div class="field">
-	    <%= f.label :pdate %><br>
-	    <%= f.date_select :pdate, :use_month_numbers => true %>
+	    <%= f.label "事件精准日期:" %><br>
+	    <%= f.date_select :pdate %>
+	</div>
+	<div class="field">
+		<%= f.check_box :isfuzzydate,{:checked=>true}, "true", "false" %>使用事件模糊日期</br>
+		<%= f.select( "year", { "年初" => "begin_year", "年中" => "middle_year", "年末" => "end_year", "春" => "spring", "夏" => "summer", "秋" => "fall", "冬" => "winter"}) %>  
+		<%= f.select( "month", { "月初(上旬)" => "begin_month", "月中(中旬)" => "middle_month", "月末(下旬)" => "end_month"}) %>  
+		<%= f.select( "day", { "凌晨" => "midnight", "早上" => "early_day", "上午" => "morning", "中午" => "noon", "下午" => "afternoon", "晚上" => "evening", "夜里" => "night"}) %>  
+		
 	</div>
 	<div class="field">
 	    <%= f.label :place %><br>
@@ -27,11 +34,10 @@
 	    <%= f.label :event_description %><br>
 	    <%= f.text_area :event_description, rows: 8, cols: 30 %>
 	</div>
-
 	<div class="field">
-   	 	<%= f.file_field :avatar %>
-   	  	<%= f.hidden_field :avatar_cache %>
-  	</div>
+		<%= f.label :tag %>(Comma Separated)<br/>
+		<%= f.text_field :tag, size: 30 %>
+	</div>
 
   <div class="actions">
     <%= f.submit %>

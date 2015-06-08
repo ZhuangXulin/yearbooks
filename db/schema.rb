@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526101632) do
+ActiveRecord::Schema.define(version: 20150608115422) do
 
   create_table "people", force: :cascade do |t|
     t.string   "name",          limit: 255
@@ -34,6 +34,11 @@ ActiveRecord::Schema.define(version: 20150526101632) do
     t.text     "event_description", limit: 65535
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.string   "tag",               limit: 255
+    t.boolean  "isfuzzydate",       limit: 1
+    t.string   "year",              limit: 255
+    t.string   "month",             limit: 255
+    t.string   "day",               limit: 255
   end
 
   create_table "pictures", force: :cascade do |t|

@@ -79,8 +79,8 @@
 								</p>
 								<%= link_to 'Edit', edit_person_path(@person) %> |
 								<%= link_to 'Back', people_path %> | 
-								<%= link_to 'Show yearbooks', people_yearbook_path%>
-								
+								<%= link_to 'Show yearbooks', '/people_yearbooks?person_name='+@person.name %>
+							
 							</ul>
 						</article>
 					</div>

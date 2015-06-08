@@ -33,20 +33,28 @@
 								<h1>People Yearbook Infomation</h1>
 								<p>
 								  <strong>Person Name:</strong>
-								  <%= @people_yearbook.person_id %>
+								  <%= @yearbook.person_name %>
 								</p>
 
 								<p>
 								  <strong>Yearbook Date:</strong>
-								  <%= @people_yearbook.pdate %>
+								  <%= @yearbook.pdate %>
+								</p>
+								<p>
+									<strong>Fuzzy Yearbook Date:</strong>
+									<%= @yearbook.year%>-<%= @yearbook.month %>-<%= @yearbook.day %>
 								</p>
 								<p>
 								  <strong>Event Place:</strong>
-								  <%= @people_yearbook.place %>
+								  <%= @yearbook.place %>
 								</p>
 								<p>
 								  <strong>Event Description:</strong>
-								  <%= @people_yearbook.event_description %>
+								  <%= @yearbook.event_description %>
+								</p>
+								<p>
+									<strong>Tag:</strong>
+									<%= @yearbook.tag %>
 								</p>
 								<p>
 								  <strong>This Event Create At:</strong>
