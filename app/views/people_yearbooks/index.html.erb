@@ -44,11 +44,13 @@
 								<table width="80%">
 								  <thead>
 								    <tr style="text-align: center; COLOR: #0076C8; BACKGROUND-COLOR: #F4FAFF; font-weight: bold">
-										<th width="10%">NO.</th>
-									 	<th width="20%">Yearbook Date</th>
-									  	<th width="10%">Place</th>
+										<th width="5%">NO.</th>
+									 	<th width="10%">Yearbook Date</th>
+									 	<th width="10%">Yearbook Fuzzy Date</th>
+									 	<th width="20%">Yearbook Fuzzy Date Quantum</th>
+									  	<th width="5%">Place</th>
 									  	<th width="40%">Event Description</th>
-								      	<th width="20%" colspan="3">Operation</th>
+								      	<th width="10%" colspan="3">Operation</th>
 								    </tr>
 								  </thead>
 
@@ -57,6 +59,8 @@
 								      <tr>
 										  <td align='center'><%= i+1 %></td>
 										 <td align='center'><%= people_yearbook.pdate %></td>
+										 <td align='center'><%= people_yearbook.year %><%= people_yearbook.year %>&nbsp;-&nbsp;<%= people_yearbook.month %><%= people_yearbook.fuzzy_month %>&nbsp;-&nbsp;<%= people_yearbook.day %><%= people_yearbook.fuzzy_day %></td>
+							 			 <td align='center'><%= people_yearbook.fuzzy_date_quantum %></td>			 
 										 <td align='center'><%= people_yearbook.place %></td>
 										 <td><%= people_yearbook.event_description %></td>
 								        <td align='center'><%= link_to 'Show', people_yearbook %></td>

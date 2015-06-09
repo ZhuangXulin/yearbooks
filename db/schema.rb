@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608115422) do
+ActiveRecord::Schema.define(version: 20150609024720) do
 
   create_table "people", force: :cascade do |t|
     t.string   "name",          limit: 255
@@ -28,17 +28,22 @@ ActiveRecord::Schema.define(version: 20150608115422) do
   end
 
   create_table "people_yearbooks", force: :cascade do |t|
-    t.integer  "person_id",         limit: 4
+    t.integer  "person_id",          limit: 4
     t.date     "pdate"
-    t.string   "place",             limit: 255
-    t.text     "event_description", limit: 65535
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "tag",               limit: 255
-    t.boolean  "isfuzzydate",       limit: 1
-    t.string   "year",              limit: 255
-    t.string   "month",             limit: 255
-    t.string   "day",               limit: 255
+    t.string   "place",              limit: 255
+    t.text     "event_description",  limit: 65535
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "tag",                limit: 255
+    t.boolean  "isfuzzydate",        limit: 1
+    t.string   "year",               limit: 255
+    t.string   "month",              limit: 255
+    t.string   "day",                limit: 255
+    t.string   "fuzzy_year",         limit: 255
+    t.string   "fuzzy_month",        limit: 255
+    t.string   "fuzzy_day",          limit: 255
+    t.boolean  "isfuzzydatequantum", limit: 1
+    t.string   "fuzzy_date_quantum", limit: 255
   end
 
   create_table "pictures", force: :cascade do |t|

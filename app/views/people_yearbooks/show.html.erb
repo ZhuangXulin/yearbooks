@@ -42,14 +42,18 @@
 								</p>
 								<p>
 									<strong>Fuzzy Yearbook Date:</strong>
-									<%= @yearbook.year%>-<%= @yearbook.month %>-<%= @yearbook.day %>
+									<%= @yearbook.year%><%= @yearbook.fuzzy_year %>-<%= @yearbook.month %><%= @yearbook.fuzzy_month %>-<%= @yearbook.day %><%= @yearbook.fuzzy_day %>
+								</p>
+								<p>
+									<strong>Fuzzy Yearbook Date Quantum:</strong>
+									<%= @yearbook.fuzzy_date_quantum %>
 								</p>
 								<p>
 								  <strong>Event Place:</strong>
 								  <%= @yearbook.place %>
 								</p>
 								<p>
-								  <strong>Event Description:</strong>
+								  <strong>Event Description:</strong><br/>
 								  <%= @yearbook.event_description %>
 								</p>
 								<p>

@@ -1,3 +1,4 @@
+#encoding:UTF-8
 class PeopleYearbooksController < ApplicationController
   before_filter :authenticate_user!
   before_action :set_people_yearbook, only: [:show, :edit, :update, :destroy]
@@ -146,6 +147,6 @@ class PeopleYearbooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def people_yearbook_params
-      params.require(:people_yearbook).permit(:person_id, :pdate, :place, :event_description, :isfuzzydate, :year, :month, :day, :tag)
+      params.require(:people_yearbook).permit(:person_id, :pdate, :place, :event_description, :isfuzzydate, :year, :fuzzy_year, :month, :fuzzy_month, :day, :fuzzy_day, :tag, :isfuzzydatequantum, :fuzzy_date_quantum)
     end
 end
