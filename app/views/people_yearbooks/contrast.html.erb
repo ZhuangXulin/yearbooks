@@ -1,3 +1,21 @@
+<script language="javascript">
+window.onload=function showtable(){
+    var tablename=document.getElementById("yearbooks_one");
+    var li=tablename.getElementsByTagName("tr");
+    for (var i=0;i<li.length;i++){
+        if(i%2 ==0){    
+        li[i].style.backgroundColor="#FFB584";
+        }
+    }
+    var tablename=document.getElementById("yearbooks_two");
+    var li=tablename.getElementsByTagName("tr");
+    for (var i=0;i<li.length;i++){
+        if(i%2 ==0){    
+        li[i].style.backgroundColor="#FFB584";
+        }
+    }
+}
+</script>
 <body>
 	<div id="wrapper">
 		<div id="content">
@@ -33,28 +51,28 @@
 							<ul class="states" >
 								<%= form_tag people_yearbooks_contrast_path, :method => 'get' do %>
 								<p>
-								<%= text_field_tag :person_name, nil, placeholder: 'Enter person name...', size: 30 %>
+								<%= text_field_tag :person_name, nil, placeholder: 'Person Name A&Person Name B', size: 30 %>
 								<%= submit_tag "Search", :name => nil %>
 								</p>
 								<% end %>
 								<h1>Contrast People Yearbooks</h1>
 							</ul>
-							<div style=" float:left;width:49%;border:1px solid #F00">
+							<div style="float:left;width:49%;border:1px solid #F00;height:530px;overflow:auto">
 								<ul class="states" >
-									Person Name:<%= @person_name %>
+									Person Name:<%= @person_name_one %>
 								<table width="100%">
 								  <thead>
 								    <tr style="text-align: center; COLOR: #0076C8; BACKGROUND-COLOR: #F4FAFF; font-weight: bold">
-									 	<th width="20%">Yearbook Date</th>
-									  	<th width="60%">Event Description</th>
+									 	<th width="25%">Yearbook Date</th>
+									  	<th width="55%">Event Description</th>
 								      	<th width="20%" colspan="3">Operation</th>
 								    </tr>
 								  </thead>
-								  <tbody>
+								  <tbody id="yearbooks_one">
 									  <% if @people_yearbooks_one != nil%>
 									  <% @people_yearbooks_one.each do |people_yearbook_one| %>
   								      <tr>
-  										 <td align='center'><%= people_yearbook_one.pdate %></td>
+  										 <td align='center'><%= people_yearbook_one.fuzzy_date_quantum %></td>
   										 <td><%= people_yearbook_one.event_description %></td>
   								        <td align='center'><%= link_to 'Show', people_yearbook_one %></td>
   								        <td align='center'><%= link_to 'Edit', edit_people_yearbook_path(people_yearbook_one) %></td>
@@ -68,20 +86,29 @@
 								<br />
 							</ul>
 						</div>
-						<div style="float:left;width:49%;border:1px solid #000">
+						<div style="float:left;width:49%;border:1px solid #000;height:530px;overflow:auto">
 								<ul class="states" >
-									Person Name:<%= @person_name %>
+									Person Name:<%= @person_name_two %>
 								<table width="100%">
 								  <thead>
 								    <tr style="text-align: center; COLOR: #0076C8; BACKGROUND-COLOR: #F4FAFF; font-weight: bold">
-									 	<th width="20%">Yearbook Date</th>
-									  	<th width="60%">Event Description</th>
+									 	<th width="25%">Yearbook Date</th>
+									  	<th width="55%">Event Description</th>
 								      	<th width="20%" colspan="3">Operation</th>
 								    </tr>
 								  </thead>
-								  <tbody>
-
-
+								  <tbody id="yearbooks_two">
+									  <% if @people_yearbooks_two != nil%>
+									  <% @people_yearbooks_two.each do |people_yearbook_two| %>
+  								      <tr>
+  										 <td align='center'><%= people_yearbook_two.fuzzy_date_quantum %></td>
+  										 <td><%= people_yearbook_two.event_description %></td>
+  								        <td align='center'><%= link_to 'Show', people_yearbook_two %></td>
+  								        <td align='center'><%= link_to 'Edit', edit_people_yearbook_path(people_yearbook_two) %></td>
+  								        <td align='center'><%= link_to 'Destroy', people_yearbook_two, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  								      </tr>
+									  <% end %>
+  								    <% end %>
 								  </tbody>
 								</table>
 								<br />

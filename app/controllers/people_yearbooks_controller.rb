@@ -121,6 +121,8 @@ class PeopleYearbooksController < ApplicationController
     if params[:person_name] != nil
       person_name = params[:person_name].split(/&/)
       if person_name.size == 2
+        @person_name_one = person_name[0]
+        @person_name_two = person_name[1]
         @people_yearbooks_one = PeopleYearbook.index_contrast(person_name[0])
         @people_yearbooks_two = PeopleYearbook.index_contrast(person_name[1])
       end
