@@ -115,6 +115,20 @@ class PeopleYearbooksController < ApplicationController
     end
   end
 
+
+  #对比两份年谱
+  def contrast
+    if params[:person_name] != nil
+      person_name = params[:person_name].split(/&/)
+      if person_name.size == 2
+        @people_yearbooks_one = PeopleYearbook.index_contrast(person_name[0])
+        @people_yearbooks_two = PeopleYearbook.index_contrast(person_name[1])
+      end
+    end
+  end
+
+
+
   # PATCH/PUT /people_yearbooks/1
   # PATCH/PUT /people_yearbooks/1.json
   def update

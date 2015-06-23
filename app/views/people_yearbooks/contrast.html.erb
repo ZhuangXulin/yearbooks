@@ -1,0 +1,98 @@
+<body>
+	<div id="wrapper">
+		<div id="content">
+			<div class="c1">
+				<div class="controls">
+					<nav class="links">
+						<ul>
+							<li><a href="/people#index" class="ico1">People </a></li>
+							<li><a href="/people_yearbooks#index" class="ico2">People Yearbooks </a></li>
+							<li><a href="/people_yearbooks/contrast" class="ico2">Contrast Yearbooks </a></li>
+						</ul>
+					</nav>
+					<div class="profile-box">
+						<span class="profile">
+							<a href="#" class="section">
+								<img class="image" src="/images/img1.png" alt="image description" width="26" height="26" />
+								<span class="text-box">
+									Welcome
+									<strong class="name">Xulin Zhuang</strong>
+								</span>
+							</a>
+							<a href="#" class="opener">opener</a>
+						</span>
+						 <%= link_to('Logout', destroy_user_session_path, :method => :delete,class: 'btn-on') %>  
+					</div>
+				</div>
+				<div class="tabs" > 
+					<div id="tab-1" class="tab">
+						<article>
+							<div class="text-section">
+								<h1><p id="notice"><%= notice %></p></h1>
+							</div>
+							<ul class="states" >
+								<%= form_tag people_yearbooks_contrast_path, :method => 'get' do %>
+								<p>
+								<%= text_field_tag :person_name, nil, placeholder: 'Enter person name...', size: 30 %>
+								<%= submit_tag "Search", :name => nil %>
+								</p>
+								<% end %>
+								<h1>Contrast People Yearbooks</h1>
+							</ul>
+							<div style=" float:left;width:49%;border:1px solid #F00">
+								<ul class="states" >
+									Person Name:<%= @person_name %>
+								<table width="100%">
+								  <thead>
+								    <tr style="text-align: center; COLOR: #0076C8; BACKGROUND-COLOR: #F4FAFF; font-weight: bold">
+									 	<th width="20%">Yearbook Date</th>
+									  	<th width="60%">Event Description</th>
+								      	<th width="20%" colspan="3">Operation</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+									  <% if @people_yearbooks_one != nil%>
+									  <% @people_yearbooks_one.each do |people_yearbook_one| %>
+  								      <tr>
+  										 <td align='center'><%= people_yearbook_one.pdate %></td>
+  										 <td><%= people_yearbook_one.event_description %></td>
+  								        <td align='center'><%= link_to 'Show', people_yearbook_one %></td>
+  								        <td align='center'><%= link_to 'Edit', edit_people_yearbook_path(people_yearbook_one) %></td>
+  								        <td align='center'><%= link_to 'Destroy', people_yearbook_one, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  								      </tr>
+									  <% end %>
+  								    <% end %>
+
+								  </tbody>
+								</table>
+								<br />
+							</ul>
+						</div>
+						<div style="float:left;width:49%;border:1px solid #000">
+								<ul class="states" >
+									Person Name:<%= @person_name %>
+								<table width="100%">
+								  <thead>
+								    <tr style="text-align: center; COLOR: #0076C8; BACKGROUND-COLOR: #F4FAFF; font-weight: bold">
+									 	<th width="20%">Yearbook Date</th>
+									  	<th width="60%">Event Description</th>
+								      	<th width="20%" colspan="3">Operation</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+
+
+								  </tbody>
+								</table>
+								<br />
+							</ul>
+						</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+</body>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'people_yearbooks/contrast' => 'people_yearbooks#contrast'
   resources :people_yearbooks
   resources :people
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
