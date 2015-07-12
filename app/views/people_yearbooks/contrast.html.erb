@@ -15,6 +15,7 @@ window.onload=function showtable(){
         }
     }
 }
+
 </script>
 <body>
 	<div id="wrapper">
@@ -51,13 +52,17 @@ window.onload=function showtable(){
 							<ul class="states" >
 								<%= form_tag people_yearbooks_contrast_path, :method => 'get' do %>
 								<p>
-								<%= text_field_tag :person_name, nil, placeholder: 'Person Name A&Person Name B', size: 30 %>
+									One Person Name:
+								<%= text_field_tag :person_name_one, nil, value: @person_name_one, size: 30 %>
+								
+									Contrast Other Person Name:
+								<%= text_field_tag :person_name_two, nil,value: @person_name_two, size: 30 %>
 								<%= submit_tag "Search", :name => nil %>
 								</p>
 								<% end %>
 								<h1>Contrast People Yearbooks</h1>
 							</ul>
-							<div style="float:left;width:49%;border:1px solid #F00;height:530px;overflow:auto">
+							<div id="person_one" style="float:left;width:49%;border:1px solid #F00;height:530px;overflow:auto">
 								<ul class="states" >
 									Person Name:<%= @person_name_one %>
 								<table width="100%">
@@ -86,7 +91,7 @@ window.onload=function showtable(){
 								<br />
 							</ul>
 						</div>
-						<div style="float:left;width:49%;border:1px solid #000;height:530px;overflow:auto">
+						<div id="person_two" style="float:left;width:49%;border:1px solid #000;height:530px;overflow:auto">
 								<ul class="states" >
 									Person Name:<%= @person_name_two %>
 								<table width="100%">
