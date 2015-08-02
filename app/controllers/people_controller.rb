@@ -72,10 +72,6 @@ class PeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      if params[:person][:isdeath] == "yes"
         params.require(:person).permit(:name, :bio, :nationality, :birthplace, :date_of_birth, :date_of_death, :occupation, :wikipedia_url, :baike_url)
-      else
-        params.require(:person).permit(:name, :bio, :nationality, :birthplace, :date_of_birth, :occupation, :wikipedia_url, :baike_url)
-      end
     end
 end

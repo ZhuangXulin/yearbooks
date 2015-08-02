@@ -12,32 +12,19 @@
   <% end %>
 
 	<div class="field">
-	    Person Name<br>
+	    Person Name:<br>
 		<input type="text" name="person_name" value="" size="30" /> 
 	</div>
 	<div class="field">
-	    <%= f.label "事件精准日期:" %><br>
-	    <%= f.date_select :pdate %>
+		Event Date: <br>
+		<%= f.text_field :event_date, size: 30 %>
 	</div>
 	<div class="field">
-		<%= f.check_box :isfuzzydate,{:checked=>true}, "true", "false" %>使用事件模糊日期</br>
-		<%= f.text_field :year, size: 10 %>
-		<%= f.select( "fuzzy_year", { "" => "", "年初" => "begin_year", "年中" => "middle_year", "年末" => "end_year", "春" => "spring", "夏" => "summer", "秋" => "fall", "冬" => "winter"}) %>&nbsp;-&nbsp;
-		<%= f.select("month", {"" => "", "1" => "1", "2" => "2", "3" => "3", "4" => "4", "5" => "5", "6" => "6", "7" => "7", "8" => "8", "9" => "9", "10" => "10", "11" => "11", "12" => "12" }) %>
-		<%= f.select( "fuzzy_month", { "" => "", "月初(上旬)" => "begin_month", "月中(中旬)" => "middle_month", "月末(下旬)" => "end_month"}) %>&nbsp;-&nbsp;
-		<%= f.select("day", {"" => "", "1" => "1", "2" => "2", "3" => "3", "4" => "4", "5" => "5", "6" => "6", "7" => "7", "8" => "8", "9" => "9", "10" => "10", "11" => "11", "12" => "12", "13" => "13", "14" => "14", "15" => "15", "16" => "16", "17" => "17", "18" => "18", "19" => "19", "20" => "20", "21" => "21", "22" => "22", "23" => "23", "24" => "24", "25" => "25", "26" => "26", "27" => "27", "28" => "28", "29" => "29", "30" => "30", "31" => "31" })%>
-		<%= f.select( "fuzzy_day", { "" => "", "凌晨" => "midnight", "早上" => "early_day", "上午" => "morning", "中午" => "noon", "下午" => "afternoon", "晚上" => "evening", "夜里" => "night"}) %>  
-	</div>
-	<div class="field">
-		<%= f.check_box :isfuzzydatequantum,{:checked=>false}, "true", "false" %>使用事件模糊日期段</br>
-		<%= f.text_field :fuzzy_date_quantum, size: 30 %>
-	</div>
-	<div class="field">
-	    <%= f.label :place %><br>
+	    Place: <br>
 	    <%= f.text_field :place, size: 30 %>
 	</div>
 	<div class="field">
-	    <%= f.label :event_description %><br>
+	    Event Description: <br>
 	    <%= f.text_area :event_description, rows: 8, cols: 30 %>
 	</div>
 	<div class="field">
