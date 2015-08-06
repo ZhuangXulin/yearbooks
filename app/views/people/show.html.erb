@@ -71,13 +71,17 @@
 								  <%= @person.baike_url %>
 								</p>
 								<p>
-								  <strong>This Event Create At:</strong>
+								  <strong>This People Create At:</strong>
 								  <%= @person.created_at %>
 								</p>
 								<p>
-								  <strong>This Event Update At:</strong>
+								  <strong>This People Update At:</strong>
 								  <%= @person.updated_at %>
 								</p>
+								<P>
+									<strong>This People Photo Is:</strong><br>
+									<%= image_tag @person.photo.url(:medium) %>   
+								</P>
 								<%= link_to 'Edit', edit_person_path(@person) %> |
 								<%= link_to 'Back', people_path %> | 
 								<%= link_to 'Show yearbooks', '/people_yearbooks?person_name='+@person.name %>

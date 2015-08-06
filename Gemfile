@@ -56,5 +56,4 @@ gem 'i18n'
 gem 'will_paginate', '~> 3.0'
 
 # image upload
-gem 'carrierwave'
-gem 'mini_magick'
+gem 'paperclip'

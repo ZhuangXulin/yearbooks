@@ -31,7 +31,10 @@
 		<%= f.label :tag %>(Comma Separated)<br/>
 		<%= f.text_field :tag, size: 30 %>
 	</div>
-
+  	<div class="field">
+    	<%= f.label :people_yearbooks_photo %>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	<%= f.file_field :photo %>
+  	</div>
   <div class="actions">
     <%= f.submit %>
   </div>

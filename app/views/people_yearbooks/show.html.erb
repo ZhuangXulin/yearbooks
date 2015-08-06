@@ -38,29 +38,25 @@
 								</p>
 
 								<p>
-								  <strong>Yearbook Date:</strong>
-								  <%= @yearbook.pdate %>
-								</p>
-								<p>
-									<strong>Fuzzy Yearbook Date:</strong>
-									<%= @yearbook.year%><%= @yearbook.fuzzy_year %>-<%= @yearbook.month %><%= @yearbook.fuzzy_month %>-<%= @yearbook.day %><%= @yearbook.fuzzy_day %>
-								</p>
-								<p>
-									<strong>Fuzzy Yearbook Date Quantum:</strong>
-									<%= @yearbook.fuzzy_date_quantum %>
+								  <strong>Event Date:</strong>
+								  <%= @people_yearbook.event_date %>
 								</p>
 								<p>
 								  <strong>Event Place:</strong>
-								  <%= @yearbook.place %>
+								  <%= @people_yearbook.place %>
 								</p>
 								<p>
 								  <strong>Event Description:</strong><br/>
-								  <%= @yearbook.event_description %>
+								  <%= @people_yearbook.event_description %>
 								</p>
 								<p>
 									<strong>Tag:</strong>
-									<%= @yearbook.tag %>
+									<%= @people_yearbook.tag %>
 								</p>
+								<P>
+									<strong>This People Yearbooks Photo Is:</strong><br>
+									<%= image_tag @people_yearbook.photo.url(:medium) %>   
+								</P>
 								<p>
 								  <strong>This Event Create At:</strong>
 								  <%= @people_yearbook.created_at %>

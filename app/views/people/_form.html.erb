@@ -48,7 +48,10 @@
     <%= f.label :baike_url %>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <%= f.text_field :baike_url, size: 30 %>
   </div>
-  
+  <div class="field">
+    <%= f.label :people_photo %>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= f.file_field :photo %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

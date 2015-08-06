@@ -16,50 +16,6 @@ class PeopleYearbooksController < ApplicationController
     people_yearbook = PeopleYearbook.show(params[:id])
     if people_yearbook.count > 0
       @yearbook = people_yearbook[0]
-      
-      case @yearbook.year
-      when 'begin_year' then
-        @yearbook.year = '年初'
-      when 'middle_year' then
-        @yearbook.year = '年中'
-      when 'end_year' then
-        @yearbook.year = '年末'
-      when 'spring' then
-        @yearbook.year = '春'
-      when 'summer' then
-        @yearbook.year = '夏'
-      when 'fall' then
-        @yearbook.year = '秋'
-      when 'winter' then
-        @yearbook.year = '冬'
-      end
-      
-      case @yearbook.month
-      when 'begin_month' then
-        @yearbook.month = '月初(上旬)'
-      when 'middle_month' then
-        @yearbook.month = '月中(中旬)'
-      when 'end_month' then
-        @yearbook.month = '月末(下旬)'
-      end
-      
-      case @yearbook.day
-      when 'midnight' then
-        @yearbook.day = '凌晨'
-      when 'early_day' then
-        @yearbook.day = '早上'
-      when 'morning' then
-        @yearbook.day = '上午'
-      when 'noon' then
-        @yearbook.day = '中午'
-      when 'afternoon' then
-        @yearbook.day = '下午'
-      when 'evening' then
-        @yearbook.day = '晚上'
-      when 'night' then
-        @yearbook.day = '夜里'
-      end
-      
     else
       @yearbook = nil
     end
@@ -85,22 +41,7 @@ class PeopleYearbooksController < ApplicationController
         format.html { render :new }
         format.json { render json: @people_yearbook.errors, status: :unprocessable_entity }
       else
-        puts('------------')
-        puts(people_yearbook_params[:isfuzzydate])
-        puts(people_yearbook_params[:year])
-        puts(people_yearbook_params[:month])
-        puts(people_yearbook_params[:day])
-        puts(people_yearbook_params[:pdate])
-        
-        puts('------------')
-        if people_yearbook_params[:isfuzzydate] == "true" then
-          @people_yearbook.year = people_yearbook_params[:year]
-          @people_yearbook.month = people_yearbook_params[:month]
-          @people_yearbook.day = people_yearbook_params[:day]
-        else
-          @people_yearbook.pdate  = people_yearbook_params[:pdate]
-        end
-        @people_yearbook.isfuzzydate = people_yearbook_params[:isfuzzydate]
+        @people_yearbook.event_date = people_yearbook_params[:event_date]
         @people_yearbook.person_id = person[0].id
         @people_yearbook.place = people_yearbook_params[:place]
         @people_yearbook.event_description = people_yearbook_params[:event_description]
@@ -171,6 +112,6 @@ class PeopleYearbooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def people_yearbook_params
-      params.require(:people_yearbook).permit(:person_id, :pdate, :place, :event_description, :isfuzzydate, :year, :fuzzy_year, :month, :fuzzy_month, :day, :fuzzy_day, :tag, :isfuzzydatequantum, :fuzzy_date_quantum)
+      params.require(:people_yearbook).permit(:person_id, :event_date, :place, :event_description, :tag, :photo)
     end
 end
